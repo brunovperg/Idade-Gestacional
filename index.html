@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <!-- Links -->
+        <link rel="stylesheet" href="/style.css">
+        
+        <!-- main JS -->
+        <script defer src="./main.js"></script>
+    
+    <title>Calculadora Idade Gestacional</title>
+</head>
+<body>
+    <h1>CALCULADORA IDADE GESTACIONAL</h1>
+    <main>
+        <select onchange="fun1()" name="methods" id="methods"  >
+            <option value="menst">Última Menstruação</option>
+            <option value="ultrasound">Último Ultrasom</option>
+        </select>
+        <hr>
+        <form action="">
+            <div class="menst" id="menst">
+                <label for="lastPeriodDate">Informe a data da Última Menstruação:</label>
+                <br>
+                <input type="date" id="dateMenst" />
+                <br><br>
+                <hr>
+            </div>
+            <div class="ultrasound" id="ultrasound">
+                <label for="lastUltSound">Informe a data do Último Ultrasom:</label>
+                <br>
+                <br>
+                <input type="date" id="dateUltra"/>
+                <br><br>
+                <label for="ultSoundWeek">No ultrasom a gestação tinha</label>
+                <input type="number" min="0" name="weeks" id="weeks"> Semanas e 
+                <input type="number" min="0" name="days" id="days"> dias
+                <br><br>
+                <hr>
+            </div>
+            <button type="button" class="calcular" onclick="calculate()" id="calcular">Calcular</button>
+        </form>
+    </main>
+</body>
+</html>
