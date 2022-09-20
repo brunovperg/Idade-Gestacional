@@ -28,6 +28,13 @@ HidebothForm();
 }
 }
 
+window.onload = function() {
+    if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+    }
+}
+
 // ########### TAKE INPUT DATA INTO CALCULATION ##############
 const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
 function calculate(){
