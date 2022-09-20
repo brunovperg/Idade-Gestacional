@@ -48,10 +48,11 @@ function calculate(){
         const inputUltraDate = document.getElementById('dateUltra').value
         const dateUltra = new Date(inputUltraDate)
         const utcDate1 = Math.abs(Date.UTC(inputUltraDate.slice(2,4),inputUltraDate.slice(5,7),inputUltraDate.slice(8,10)));
-
+        const weekAdd = parseInt(document.getElementById('weeks').value)*7*24 * 60 * 60 * 1000
+        const dayAdd = (document.getElementById('days').value)*24 * 60 * 60 * 1000
         const today = new Date().getTime()
         const todayAbs = Math.abs(today)
-        diffDays = Math.floor((((todayAbs) - (dateUltra))/oneDay)-1);
+        diffDays = Math.floor((((todayAbs - dateUltra)+(weekAdd + dayAdd))/oneDay)-1);
         weeksAge = Math.floor(diffDays/7)
         daysAge = (diffDays%7)
         alert(`A idade gestacional é de ${weeksAge} semanas e ${daysAge} dias`)
