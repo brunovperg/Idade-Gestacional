@@ -1,7 +1,43 @@
+/*====  RESET ============================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
 form {
     visibility: hidden;
 }
 
 form button{
     visibility: visible;
+}
+
+body main{
+    display: grid;
+    gap: 2rem;
+    place-content: center;
+}
+
+body h1{
+    text-align: center;
+   
+}
+
+select{
+    position: relative;
+    box-shadow: black, 1,1,1;
+  box-sizing: content-box;
+}
+
+input::-webkit-calendar-picker-indicator{
+    display: none;
+}
+
+input[type="date"]::-webkit-input-placeholder{ 
+    visibility: hidden !important;
+}
+
+div .ultrasound{
+    position: absolute;
 }
