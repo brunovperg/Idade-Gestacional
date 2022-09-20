@@ -40,26 +40,25 @@ const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
 function calculate(){
     const yourSelect = document.getElementById( "methods" );
     if(yourSelect.options[ yourSelect.selectedIndex ].value == "menst"){
-        const inputMenstDate = document.getElementById('dateMenst').value
-        const dateMenst = new Date(inputMenstDate)
-        const utcDate1 = Math.abs(Date.UTC(inputMenstDate.slice(2,4),inputMenstDate.slice(5,7),inputMenstDate.slice(8,10)));
-
-        const today = new Date().getTime()
+        const inputMenstDate = document.getElementById('dateMenst').value //get input from html
+        const dateMenst = new Date(inputMenstDate).toUTCString() //transform input into midnight on the day picked
+        const utcInput = new Date(dateMenst).getTime()//transforms date into milliseconds 
+        const today = new Date().getTime() //gets today's date and transforms into milliseconds
         const todayAbs = Math.abs(today)
-        diffDays = Math.floor((((todayAbs) - (dateMenst))/oneDay)-1);
+        diffDays = Math.floor(((todayAbs - utcInput)/oneDay)); // get the difference between milliseconds and transforms to days
         weeksAge = Math.floor(diffDays/7)
         daysAge = (diffDays%7)
         alert(`A idade gestacional é de ${weeksAge} semanas e ${daysAge} dias`)
     }
     else if(yourSelect.options[ yourSelect.selectedIndex ].value == "ultrasound"){
         const inputUltraDate = document.getElementById('dateUltra').value
-        const dateUltra = new Date(inputUltraDate)
-        const utcDate1 = Math.abs(Date.UTC(inputUltraDate.slice(2,4),inputUltraDate.slice(5,7),inputUltraDate.slice(8,10)));
+        const dateUltra = new Date(inputUltraDate).toUTCString()
+        const utcInput = new Date(dateUltra).getTime()
         const weekAdd = parseInt(document.getElementById('weeks').value)*7*24 * 60 * 60 * 1000
         const dayAdd = (document.getElementById('days').value)*24 * 60 * 60 * 1000
         const today = new Date().getTime()
         const todayAbs = Math.abs(today)
-        diffDays = Math.floor((((todayAbs - dateUltra)+(weekAdd + dayAdd))/oneDay)-1);
+        diffDays = Math.floor(((todayAbs - utcInput)+(weekAdd + dayAdd))/oneDay);
         weeksAge = Math.floor(diffDays/7)
         daysAge = (diffDays%7)
         alert(`A idade gestacional é de ${weeksAge} semanas e ${daysAge} dias`)
