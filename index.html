@@ -26,7 +26,7 @@
             <div class="menst" id="menst">
                 <label for="lastPeriodDate">Informe a data da Última Menstruação:</label>
                 <br>
-                <input type="date" inputmode="numeric" id="dateMenst" />
+                <input type="date" onClick="event.preventDefault()" inputmode="numeric" id="dateMenst" />
                 <br><br>
                 <hr>
             </div>
@@ -42,7 +42,7 @@
                 <br><br>
                 <hr>
             </div>
-            <button type="button" class="calcular" onclick="calculate()" id="calcular">Calcular</button>
+            <button type="button submit" class="calcular" onclick="calculate()" id="calcular">Calcular</button>
         </form>
     </main>
 </body>
