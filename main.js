@@ -31,12 +31,29 @@ HidebothForm();
 // ########### TAKE INPUT DATA INTO CALCULATION ##############
 const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
 function calculate(){
-    var yourSelect = document.getElementById( "methods" );
+    const yourSelect = document.getElementById( "methods" );
     if(yourSelect.options[ yourSelect.selectedIndex ].value == "menst"){
-        let inputMenstDate = document.getElementById('dateMenst').value
-        let dateMenst = new Date.UTC(inputMenstDate)
-        const today = new Date.UTC()
-        // diffDays =((today - dateMenst));
-        alert(today)
+        const inputMenstDate = document.getElementById('dateMenst').value
+        const dateMenst = new Date(inputMenstDate)
+        const utcDate1 = Math.abs(Date.UTC(inputMenstDate.slice(2,4),inputMenstDate.slice(5,7),inputMenstDate.slice(8,10)));
+
+        const today = new Date().getTime()
+        const todayAbs = Math.abs(today)
+        diffDays = Math.floor((((todayAbs) - (dateMenst))/oneDay)-1);
+        weeksAge = Math.floor(diffDays/7)
+        daysAge = (diffDays%7)
+        alert(`A idade gestacional é de ${weeksAge} semanas e ${daysAge} dias`)
+    }
+    else if(yourSelect.options[ yourSelect.selectedIndex ].value == "ultrasound"){
+        const inputUltraDate = document.getElementById('dateUltra').value
+        const dateUltra = new Date(inputUltraDate)
+        const utcDate1 = Math.abs(Date.UTC(inputUltraDate.slice(2,4),inputUltraDate.slice(5,7),inputUltraDate.slice(8,10)));
+
+        const today = new Date().getTime()
+        const todayAbs = Math.abs(today)
+        diffDays = Math.floor((((todayAbs) - (dateUltra))/oneDay)-1);
+        weeksAge = Math.floor(diffDays/7)
+        daysAge = (diffDays%7)
+        alert(`A idade gestacional é de ${weeksAge} semanas e ${daysAge} dias`)
     }
 }
