@@ -24,10 +24,12 @@ body h1{
    
 }
 
-select{
+select#methods{
     position: relative;
     box-shadow: black, 1,1,1;
-  box-sizing: content-box;
+    align-content: center;
+  width: 150px;
+  height: 30px;
 }
 
 /* input::-webkit-calendar-picker-indicator{
@@ -38,6 +40,10 @@ input[type="date"]::-webkit-input-placeholder{
     visibility: hidden !important;
 } */
 
-div .ultrasound{
-    position: absolute;
+/* div.ultrasound{
+    position: fixed;
+} */
+
+input.number{
+    width: 30px;
 }
