@@ -3,7 +3,7 @@ document.getElementById("methods").selectedIndex = -1;
 // ########## HIDE AND SHOW FORMS FROM DROPDOWN WINDOW #########
 
 function HidebothForm(){
-document.getElementById("menst").style.visibility = "hidden"; 
+           document.getElementById("menst").style.visibility = "hidden"; 
            document.getElementById("ultrasound").style.visibility = "hidden";
            document.getElementById("calcular").style.visibility = "hidden"; 
 }
@@ -15,24 +15,19 @@ function fun1() {
           {
            document.getElementById("ultrasound").style.visibility = "hidden";
            document.getElementById("menst").style.visibility = "visible";
+           document.getElementById("calcular").style.visibility = "visible"; 
             }
 
          else if(selectedOption == "ultrasound")
           {
            document.getElementById("ultrasound").style.visibility = "visible";
            document.getElementById("menst").style.visibility = "hidden"; 
+           document.getElementById("calcular").style.visibility = "visible"; 
             }
 else
 {
 HidebothForm();
 }
-}
-
-window.onload = function() {
-    if(!window.location.hash) {
-        window.location = window.location + '#loaded';
-        window.location.reload();
-    }
 }
 
 // ########### TAKE INPUT DATA INTO CALCULATION ##############

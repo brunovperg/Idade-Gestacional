@@ -1,49 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 /*====  RESET ============================ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
   }
 
 form {
     visibility: hidden;
 }
 
-form button{
-    visibility: visible;
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(147,66,255,1) 100%);
+
+}
+.container{
+    height: 100%;
+    max-width: 700px;
+    width: 100%;
+    padding: 1rem;
+    padding-top: 2rem;
+    /* background: transparent; */
 }
 
-body main{
-    display: grid;
-    gap: 2rem;
-    place-content: center;
-}
-
-body h1{
-    text-align: center;
-   
-}
-
-select#methods{
+.container .title{
+    font-size: 20px;
+    font-weight: bold;
     position: relative;
-    box-shadow: black, 1,1,1;
-    align-content: center;
-  width: 150px;
+    text-align: center;
+}
+
+.container .choice{
+    position: relative;
+   text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.container #methods{
+position: relative;
+  align-items: center;
+  width: 170px;
   height: 30px;
+  font-weight: bold;
 }
 
-/* input::-webkit-calendar-picker-indicator{
-    display: none;
+label{
+    font-size: 18px;
 }
 
-input[type="date"]::-webkit-input-placeholder{ 
-    visibility: hidden !important;
-} */
+div.ultrasound{
+    margin-top: -75px;
+    padding-bottom: 1rem;
+}
 
-/* div.ultrasound{
-    position: fixed;
-} */
+/* REMOVER SETAS DE NUMERO Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+  }
 
 input.number{
-    width: 30px;
+    width: 60px;
+}
+
+button.calcular {
+    visibility: hidden;
+    font-size: 1.5rem;
+    margin-top: 1rem;
 }
