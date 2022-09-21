@@ -22,7 +22,7 @@
           <label for="methods">Selecione uma opção</label><br />
           <select onchange="fun1()" name="methods" id="methods">
             <option value="menst">Última Menstruação</option>
-            <option value="ultrasound">Último Ultrasom</option>
+            <option value="ultrasound">Ultrasom</option>
           </select>
         </div>
       </div>
@@ -37,9 +37,9 @@
             
           </div>
           <div class="ultrasound" id="ultrasound">
-            <label for="lastUltSound">Informe a data do Último Ultrasom:</label>
+            <label for="lastUltSound">Informe a data do Ultrasom:</label>
             <br />
-            <input type="date" id="dateUltra" />
+            <input type="date" id="dateUltra" required/>
             <br />
             <label for="ultSoundWeek">No ultrasom a gestação tinha</label><br>
             <input type="number" class="number" min="0" max="50" name="weeks" id="weeks" required/>
