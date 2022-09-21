@@ -52,12 +52,18 @@ position: relative;
   font-weight: bold;
 }
 
+.divisor-1{
+    height: 1px;
+    background: black;
+}
+
 label{
     font-size: 18px;
 }
 
 div.ultrasound{
-    margin-top: -75px;
+    position: relative;
+   margin-top: -5rem;
     padding-bottom: 1rem;
 }
 
