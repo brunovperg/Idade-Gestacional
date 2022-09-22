@@ -41,9 +41,7 @@ function calculate(){
         const today = new Date().getTime() //gets today's date and transforms into milliseconds
         const todayAbs = Math.abs(today)
         diffDays = Math.floor(((todayAbs - utcInput)/oneDay)); // get the difference between milliseconds and transforms to days
-        weeksAge = Math.floor(diffDays/7)
-        daysAge = (diffDays%7)
-        alert(`A idade gestacional é de ${weeksAge} semanas e ${daysAge} dias`)
+       
     }
     else if(yourSelect.options[ yourSelect.selectedIndex ].value == "ultrasound"){
         const inputUltraDate = document.getElementById('dateUltra').value
@@ -54,8 +52,9 @@ function calculate(){
         const today = new Date().getTime()
         const todayAbs = Math.abs(today)
         diffDays = Math.floor(((todayAbs - utcInput)+(weekAdd + dayAdd))/oneDay);
-        weeksAge = Math.floor(diffDays/7)
-        daysAge = (diffDays%7)
-        alert(`A idade gestacional é de ${weeksAge} semanas e ${daysAge} dias`)
+        
     }
+    weeksAge = Math.floor(diffDays/7)
+    daysAge = (diffDays%7)
+    alert(`A idade gestacional é de ${weeksAge} semanas e ${daysAge} dias`)
 }
