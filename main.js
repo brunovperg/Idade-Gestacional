@@ -14,14 +14,19 @@ function fun1() {
     if(selectedOption == "menst")
           {
            document.getElementById("ultrasound").style.visibility = "hidden";
+           document.getElementById("ultrasound").style.position = "absolute";
            document.getElementById("menst").style.visibility = "visible";
-           document.getElementById("calcular").style.visibility = "visible"; 
+           document.getElementById("menst").style.position = "static";
+           document.getElementById("calcular").style.visibility = "visible";
+
             }
 
          else if(selectedOption == "ultrasound")
           {
            document.getElementById("ultrasound").style.visibility = "visible";
-           document.getElementById("menst").style.visibility = "hidden"; 
+           document.getElementById("ultrasound").style.position = "static";
+           document.getElementById("menst").style.visibility = "hidden";
+           document.getElementById("menst").style.position = "absolute";
            document.getElementById("calcular").style.visibility = "visible"; 
             }
 else
@@ -41,7 +46,7 @@ function calculate(){
         const inputMenstDate = document.getElementById('dateMenst').value //get input from html
         const dateMenst = new Date(inputMenstDate).toUTCString() //transform input into midnight on the day picked
         const utcInput = new Date(dateMenst).getTime()//transforms date into milliseconds 
-        diffDays = Math.floor(((todayAbs - utcInput)/oneDay)); // get the difference between milliseconds and transforms to days 
+        diffDays = Math.floor(((todayAbs - utcInput)/oneDay))-1;// get the difference between milliseconds and transforms to days 
     }
     else if(yourSelect.options[ yourSelect.selectedIndex ].value == "ultrasound"){
         const inputUltraDate = document.getElementById('dateUltra').value
@@ -49,7 +54,7 @@ function calculate(){
         const utcInput = new Date(dateUltra).getTime()
         const weekAdd = parseInt(document.getElementById('weeks').value)*7*24 * 60 * 60 * 1000
         const dayAdd = (document.getElementById('days').value)*24 * 60 * 60 * 1000
-        diffDays = Math.floor(((todayAbs - utcInput)+(weekAdd + dayAdd))/oneDay);
+        diffDays = Math.floor(((todayAbs - utcInput)+(weekAdd + dayAdd))/oneDay)-1;
     }
 
     weeksAge = Math.floor(diffDays/7)

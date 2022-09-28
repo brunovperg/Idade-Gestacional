@@ -61,11 +61,6 @@ label{
     font-size: 18px;
 }
 
-div.ultrasound{
-    position: relative;
-   margin-top: -5rem;
-    padding-bottom: 1rem;
-}
 
 /* REMOVER SETAS DE NUMERO Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
