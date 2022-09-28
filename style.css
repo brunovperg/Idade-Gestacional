@@ -52,6 +52,10 @@ position: relative;
   font-weight: bold;
 }
 
+#menst{
+    position: absolute;
+}
+
 .divisor-1{
     height: 1px;
     background: black;

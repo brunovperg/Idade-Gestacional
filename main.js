@@ -2,10 +2,14 @@ document.getElementById("methods").selectedIndex = -1;
 
 // ########## HIDE AND SHOW FORMS FROM DROPDOWN WINDOW #########
 
+const menst =  document.getElementById("menst")
+const ultra =  document.getElementById("ultrasound")
+const calc =  document.getElementById("calcular")
+
 function HidebothForm(){
-           document.getElementById("menst").style.visibility = "hidden"; 
-           document.getElementById("ultrasound").style.visibility = "hidden";
-           document.getElementById("calcular").style.visibility = "hidden"; 
+           menst.style.visibility = "hidden"; 
+           ultra.style.visibility = "hidden";
+           calc.style.visibility = "hidden"; 
 }
 function fun1() {
 
@@ -13,21 +17,16 @@ function fun1() {
     const selectedOption = e.options[e.selectedIndex].value;
     if(selectedOption == "menst")
           {
-           document.getElementById("ultrasound").style.visibility = "hidden";
-           document.getElementById("ultrasound").style.position = "absolute";
-           document.getElementById("menst").style.visibility = "visible";
-           document.getElementById("menst").style.position = "static";
-           document.getElementById("calcular").style.visibility = "visible";
-
+           ultra.style.visibility = "hidden";
+           menst.style.visibility = "visible";
+           calc.style.visibility = "visible";
             }
 
          else if(selectedOption == "ultrasound")
           {
-           document.getElementById("ultrasound").style.visibility = "visible";
-           document.getElementById("ultrasound").style.position = "static";
-           document.getElementById("menst").style.visibility = "hidden";
-           document.getElementById("menst").style.position = "absolute";
-           document.getElementById("calcular").style.visibility = "visible"; 
+           ultra.style.visibility = "visible";
+           menst.style.visibility = "hidden";
+           calc.style.visibility = "visible"; 
             }
 else
 {
