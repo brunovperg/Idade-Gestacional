@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 /*====  RESET ============================ */
 
@@ -6,11 +6,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 form {
     visibility: hidden;
+}
+
+#menst {
+    visibility: visible;
 }
 
 body {
@@ -19,7 +23,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(147, 66, 255, 1) 100%);
+    background: radial-gradient( circle, rgba(255, 255, 255, 1) 0%, rgba(147, 66, 255, 1) 100%);
 }
 
 .container {
@@ -38,10 +42,14 @@ body {
     text-align: center;
 }
 
-.container .choice {
+.container #choice {
     position: relative;
     text-align: center;
     padding-top: 1rem;
+}
+
+#labelMenst {
+    margin-right: 5px;
 }
 
 .container #methods {
@@ -79,7 +87,7 @@ input::-webkit-inner-spin-button {
 
 /* Firefox */
 
-input[type=number] {
+input[type="number"] {
     -moz-appearance: textfield;
 }
 

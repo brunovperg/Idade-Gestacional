@@ -6,29 +6,35 @@ const removeResults = () => {
 }
 
 
-document.getElementById("methods").selectedIndex = -1;
+// document.getElementById("methods").selectedIndex = -1;
 
 // ########## HIDE AND SHOW FORMS FROM DROPDOWN WINDOW #########
 
 const menst = document.getElementById("menst");
 const ultra = document.getElementById("ultrasound");
 const calc = document.getElementById("calcular");
+const choices = document.getElementById("choice")
+const radio = document.querySelectorAll("input[type='radio']")
 
-function HidebothForm() {
-    menst.style.visibility = "hidden";
-    ultra.style.visibility = "hidden";
-    calc.style.visibility = "hidden";
-}
+HidebothForm()
 
-function fun1() {
-    const e = document.getElementById("methods");
-    const selectedOption = e.options[e.selectedIndex].value;
-    if (selectedOption == "menst") {
+radio.forEach(element => {
+    element.checked = false
+})
+
+console.log(menst.checked)
+let method = 0
+
+choices.addEventListener("click", (evento) => {
+
+    if (evento.target.id == "menstr") {
+        method = 1
         ultra.style.visibility = "hidden";
         menst.style.visibility = "visible";
         calc.style.visibility = "visible";
         removeResults()
-    } else if (selectedOption == "ultrasound") {
+    } else if (evento.target.id == "ultrasounds") {
+        method = 2
         ultra.style.visibility = "visible";
         menst.style.visibility = "hidden";
         calc.style.visibility = "visible";
@@ -36,27 +42,35 @@ function fun1() {
     } else {
         HidebothForm();
     }
+})
+
+
+function HidebothForm() {
+    menst.style.visibility = "hidden";
+    ultra.style.visibility = "hidden";
+    calc.style.visibility = "hidden";
 }
 
-calc.addEventListener("click", (evento) => {
+
+
+
+calc.addEventListener("click", () => {
     calculate();
 });
 
 // ########### TAKE INPUT DATA INTO CALCULATION ##############
 const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
 function calculate() {
-    const yourSelect = document.getElementById("methods");
+    // const yourSelect = document.getElementById("methods");
     const today = new Date().toUTCString(); //gets today's date and transforms into milliseconds
     const todayAbs = Math.abs(new Date(today).getTime());
 
-    if (yourSelect.options[yourSelect.selectedIndex].value == "menst") {
+    if (method === 1) {
         const inputMenstDate = document.getElementById("dateMenst").value; //get input from html
         const dateMenst = new Date(inputMenstDate).toUTCString(); //transform input into midnight on the day picked
         const utcInput = new Date(dateMenst).getTime(); //transforms date into milliseconds
         diffDays = Math.floor((todayAbs - utcInput) / oneDay); // get the difference between milliseconds and transforms to days
-    } else if (
-        yourSelect.options[yourSelect.selectedIndex].value == "ultrasound"
-    ) {
+    } else if (method === 2) {
         const inputUltraDate = document.getElementById("dateUltra").value;
         const dateUltra = new Date(inputUltraDate).toUTCString();
         const utcInput = new Date(dateUltra).getTime();

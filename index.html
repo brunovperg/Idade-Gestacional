@@ -18,13 +18,24 @@
 <body>
     <div class="container">
         <div class="methodselect">
-            <div class="title">CALCULADORA IDADE GESTACIONAL</div>
-            <div class="choice">
+            <div id="choice">
+                <div class="title">CALCULADORA IDADE GESTACIONAL</div>
                 <label for="methods">Selecione uma opção</label><br />
-                <select onchange="fun1()" name="methods" id="methods">
-            <option value="menst">Última Menstruação</option>
-            <option value="ultrasound">Ultrasom</option>
-          </select>
+                <div id="options">
+                    <input type="radio" name="tipo" id="menstr">
+                    <label for="" id="labelMenst">
+                        Última Menstruação
+                    </label>
+                    <input type="radio" name="tipo" id="ultrasounds"> <label for="">
+                        Ultrasom
+                    </label>
+                </div>
+
+
+                <!-- <select onchange="fun1()" name="methods" id="methods">
+            <option type="radio" value="menst">Última Menstruação</option>
+            <option type="radio" value="ultrasound">Ultrasom</option> -->
+                <!-- </select> -->
             </div>
         </div>
         <div class="divisor-1"></div>
@@ -34,8 +45,6 @@
                     <label for="lastPeriodDate">Informe a data da Última Menstruação:</label>
                     <br />
                     <input type="date" id="dateMenst" required />
-
-
                 </div>
                 <div class="ultrasound" id="ultrasound">
                     <label for="lastUltSound">Informe a data do Ultrasom:</label>
@@ -43,9 +52,9 @@
                     <input type="date" id="dateUltra" required/>
                     <br />
                     <label for="ultSoundWeek">No ultrasom a gestação tinha</label><br>
-                    <input type="number" class="number" value="0" min="0" max="50" name="weeks" id="weeks" required/> Semanas e
+                    <input type="number" class="number" placeholder="0" value='0' min="0" max="50" name="weeks" id="weeks" required/> Semanas e
                     <br>
-                    <input type="number" class="number days" value="0" min="0" max="6" name="days" id="days" required /> dias <br />
+                    <input type="number" class="number days" placeholder="0" value='0' min="0" max="6" name="days" id="days" required /> dias <br />
                 </div>
             </div>
             <div class="divisor-1"></div>
