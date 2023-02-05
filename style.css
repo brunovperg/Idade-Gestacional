@@ -1,27 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 /*====  RESET ============================ */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-  }
+}
 
 form {
     visibility: hidden;
 }
 
-body{
+body {
     display: flex;
     height: 100vh;
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(147,66,255,1) 100%);
-
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(147, 66, 255, 1) 100%);
 }
-.container{
+
+.container {
     height: 100%;
     max-width: 700px;
     width: 100%;
@@ -30,54 +31,59 @@ body{
     /* background: transparent; */
 }
 
-.container .title{
+.container .title {
     font-size: 20px;
     font-weight: bold;
     position: relative;
     text-align: center;
 }
 
-.container .choice{
+.container .choice {
     position: relative;
-   text-align: center;
+    text-align: center;
     padding-top: 1rem;
-    padding-bottom: 1rem;
 }
 
-.container #methods{
-position: relative;
-  align-items: center;
-  width: 170px;
-  height: 30px;
-  font-weight: bold;
+.container #methods {
+    position: relative;
+    align-items: center;
+    width: 170px;
+    height: 30px;
+    font-weight: bold;
 }
 
-#menst{
+#menst {
     position: absolute;
 }
 
-.divisor-1{
-    height: 1px;
+.divisor-1 {
+    margin-top: 1rem;
+    visibility: visible;
+    height: 2px;
     background: black;
 }
 
-label{
+label {
     font-size: 18px;
 }
 
 
 /* REMOVER SETAS DE NUMERO Chrome, Safari, Edge, Opera */
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
+
+
 /* Firefox */
+
 input[type=number] {
     -moz-appearance: textfield;
-  }
+}
 
-input.number{
+input.number {
     width: 60px;
 }
 
@@ -85,4 +91,13 @@ button.calcular {
     visibility: hidden;
     font-size: 1.5rem;
     margin-top: 1rem;
+    cursor: pointer;
 }
+
+#resultados p {
+    padding-top: 2rem;
+}
+
+
+/* const expectDate=new Date();
+expectDate.setDate(expectDate.getDate()+) */

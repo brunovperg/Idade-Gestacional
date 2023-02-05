@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt_BR">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,46 +13,47 @@
     <script defer src="main.js"></script>
 
     <title>Calculadora Idade Gestacional</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="container">
-      <div class="methodselect">
-        <div class="title">CALCULADORA IDADE GESTACIONAL</div>
-        <div class="choice">
-          <label for="methods">Selecione uma opção</label><br />
-          <select onchange="fun1()" name="methods" id="methods">
+        <div class="methodselect">
+            <div class="title">CALCULADORA IDADE GESTACIONAL</div>
+            <div class="choice">
+                <label for="methods">Selecione uma opção</label><br />
+                <select onchange="fun1()" name="methods" id="methods">
             <option value="menst">Última Menstruação</option>
             <option value="ultrasound">Ultrasom</option>
           </select>
+            </div>
         </div>
-      </div>
-      <div class="divisor-1"></div>
-      <form action="#">
-        <div class="fills">
-          <div class="menst" id="menst">
-            <label for="lastPeriodDate">Informe a data da Última Menstruação:</label>
-            <br />
-            <input type="date" id="dateMenst" required />
-           
-            
-          </div>
-          <div class="ultrasound" id="ultrasound">
-            <label for="lastUltSound">Informe a data do Ultrasom:</label>
-            <br />
-            <input type="date" id="dateUltra" required/>
-            <br />
-            <label for="ultSoundWeek">No ultrasom a gestação tinha</label><br>
-            <input type="number" class="number" min="0" max="50" name="weeks" id="weeks" required/>
-            Semanas e
-            <br>
-            <input type="number" class="number days" min="0" max="6" name="days" id="days" required />
-            dias <br />
-        </div>
+        <div class="divisor-1"></div>
+        <form>
+            <div class="fills">
+                <div class="menst" id="menst">
+                    <label for="lastPeriodDate">Informe a data da Última Menstruação:</label>
+                    <br />
+                    <input type="date" id="dateMenst" required />
+
+
+                </div>
+                <div class="ultrasound" id="ultrasound">
+                    <label for="lastUltSound">Informe a data do Ultrasom:</label>
+                    <br />
+                    <input type="date" id="dateUltra" required/>
+                    <br />
+                    <label for="ultSoundWeek">No ultrasom a gestação tinha</label><br>
+                    <input type="number" class="number" value="0" min="0" max="50" name="weeks" id="weeks" required/> Semanas e
+                    <br>
+                    <input type="number" class="number days" value="0" min="0" max="6" name="days" id="days" required /> dias <br />
+                </div>
+            </div>
+            <div class="divisor-1"></div>
+        </form>
+        <button type="submit" class="calcular" id="calcular">Calcular</button>
+        <div id="resultados"></div>
     </div>
-</form>
-<div class="divisor-1"></div>
-      <button type="button submit" class="calcular" onclick="calculate()" id="calcular">Calcular</button>
-    </div>
-  </body>
+
+</body>
+
 </html>
