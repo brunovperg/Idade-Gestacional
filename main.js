@@ -13,7 +13,7 @@ const removeResults = () => {
 const menst = document.getElementById("menst");
 const ultra = document.getElementById("ultrasound");
 const calc = document.getElementById("calcular");
-const choices = document.getElementById("choice")
+const options = document.getElementById("options")
 const radio = document.querySelectorAll("input[type='radio']")
 
 HidebothForm()
@@ -25,15 +25,16 @@ radio.forEach(element => {
 console.log(menst.checked)
 let method = 0
 
-choices.addEventListener("click", (evento) => {
+options.addEventListener("click", (evento) => {
+    console.log(evento)
 
-    if (evento.target.id == "menstr") {
+    if (evento.target.classList == "menstr") {
         method = 1
         ultra.style.visibility = "hidden";
         menst.style.visibility = "visible";
         calc.style.visibility = "visible";
         removeResults()
-    } else if (evento.target.id == "ultrasounds") {
+    } else if (evento.target.classList == "ultrasounds") {
         method = 2
         ultra.style.visibility = "visible";
         menst.style.visibility = "hidden";

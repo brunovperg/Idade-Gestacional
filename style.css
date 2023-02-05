@@ -52,6 +52,12 @@ body {
     margin-right: 5px;
 }
 
+#options {
+    display: inline-block;
+    width: fit-content;
+    justify-self: center;
+}
+
 .container #methods {
     position: relative;
     align-items: center;
