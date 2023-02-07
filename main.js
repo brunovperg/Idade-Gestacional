@@ -5,9 +5,6 @@ const removeResults = () => {
     }
 }
 
-
-// document.getElementById("methods").selectedIndex = -1;
-
 // ########## HIDE AND SHOW FORMS FROM DROPDOWN WINDOW #########
 
 const menst = document.getElementById("menst");
@@ -42,22 +39,21 @@ options.addEventListener("click", (evento) => {
     }
 })
 
+calc.addEventListener("click", () => {
+    removeResults();
+    calculate();
+    createResults();
+});
 
 function HidebothForm() {
-    menst.style.visibility = "hidden";
-    ultra.style.visibility = "hidden";
-    calc.style.visibility = "hidden";
+  menst.style.visibility = "hidden";
+  ultra.style.visibility = "hidden";
+  calc.style.visibility = "hidden";
 }
-
-
-
-
-calc.addEventListener("click", () => {
-    calculate();
-});
 
 // ########### TAKE INPUT DATA INTO CALCULATION ##############
 const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+
 function calculate() {
     // const yourSelect = document.getElementById("methods");
     const today = new Date().toUTCString(); //gets today's date and transforms into milliseconds
@@ -80,31 +76,29 @@ function calculate() {
     if (isNaN(diffDays) == true) {} else {
         weeksAge = Math.floor(diffDays / 7);
         daysAge = diffDays % 7;
+    }
+}
 
+    function createResults() {
         const expectDays = new Date();
-        expectDays.setDate(expectDays.getDate() + (280 - diffDays))
-        const utcDays = expectDays.toUTCString().slice(4, 16)
-
-        removeResults()
+        expectDays.setDate(expectDays.getDate() + (280 - diffDays));
+        const utcDays = expectDays.toUTCString().slice(4, 16);
 
         const idadeGestacional = document.createElement("p");
         idadeGestacional.classList.add("dpp");
 
-        const tituloIdade = document.createElement("strong")
+        const tituloIdade = document.createElement("strong");
         tituloIdade.innerHTML = "Idade gestacional: ";
-        idadeGestacional.appendChild(tituloIdade)
+        idadeGestacional.appendChild(tituloIdade);
 
         idadeGestacional.innerHTML += `${weeksAge} semanas e ${daysAge} dias `;
         resultados.appendChild(idadeGestacional);
 
         const expectDate = document.createElement("p");
         expectDate.classList.add("expDate");
-        const tituloExpDate = document.createElement("strong")
+        const tituloExpDate = document.createElement("strong");
         tituloExpDate.innerHTML = "Data provável do parto: ";
-        expectDate.appendChild(tituloExpDate)
-        expectDate.innerHTML += `${utcDays }`;
+        expectDate.appendChild(tituloExpDate);
+        expectDate.innerHTML += `${utcDays}`;
         resultados.appendChild(expectDate);
     }
-
-    // alert(`    A idade gestacional é de $ { weeksAge }    semanas e $ { daysAge }    dias `)
-}
