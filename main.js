@@ -21,12 +21,9 @@ HidebothForm()
 radio.forEach(element => {
     element.checked = false
 })
-
-console.log(menst.checked)
 let method = 0
 
 options.addEventListener("click", (evento) => {
-    console.log(evento)
 
     if (evento.target.classList == "menstr") {
         method = 1
