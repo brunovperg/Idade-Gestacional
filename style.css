@@ -11,6 +11,8 @@
 
 form {
     visibility: hidden;
+    margin: 20px;
+    border: 1px solid #ffb3b3;
 }
 
 #menst {
@@ -23,7 +25,13 @@ body {
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    background: radial-gradient( circle, rgba(255, 255, 255, 1) 0%, rgba(147, 66, 255, 1) 100%);
+    background-color: linear-gradient(to bottom, #ffc0cb, #ffffff);
+}
+
+h1,
+h2,
+h3 {
+    font-size: 2.5em;
 }
 
 .container {
@@ -73,7 +81,7 @@ body {
 .divisor-1 {
     margin-top: 1rem;
     visibility: visible;
-    height: 2px;
+    height: 1px;
     background: black;
 }
 
@@ -81,6 +89,14 @@ label {
     font-size: 18px;
 }
 
+/* INPUTS */
+input[type="date"],
+input[type="text"],
+input[type="number"] {
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  color: #000000;
+}
 
 /* REMOVER SETAS DE NUMERO Chrome, Safari, Edge, Opera */
 
@@ -90,10 +106,11 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
-
 /* Firefox */
 
 input[type="number"] {
+    text-align: center;
+    max-width: 35px;
     -moz-appearance: textfield;
 }
 
@@ -103,9 +120,53 @@ input.number {
 
 button.calcular {
     visibility: hidden;
-    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 1rem;
     cursor: pointer;
+    background-color: #db4e7d;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 3px;
+    transition: all 0.3s ease;
+}
+
+button.calcular:hover {
+    background-color: #e91e63;
+    cursor: pointer;
+}
+
+button.calcular span {
+    color: #ffffff;
+    padding: 5px;
+    font-size: 1.3rem;
+}
+
+button#color-mode{
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    outline: none;
+    background: none;
+    z-index: 999;
+    cursor: pointer;
+}
+button#color-mode img{
+display: block;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
 }
 
 #resultados p {
@@ -113,5 +174,26 @@ button.calcular {
 }
 
 
-/* const expectDate=new Date();
-expectDate.setDate(expectDate.getDate()+) */
+/* Esquema de cores 1 */
+body.color-mode-1 {
+    background: linear-gradient(to bottom, #ffc0cb, #ffffff);
+}
+button.color-mode-1{
+    background-color: #db4e7d;
+    color: white;
+}
+button.color-mode-1:hover{
+    background-color: #e91e63;
+}
+
+/* Esquema de cores 2 */
+body.color-mode-2 {
+ background: linear-gradient(to bottom, #ADD8E6, #ffffff);
+}
+button.color-mode-2{
+    background-color: #4b8ccc;
+    color: white;
+}
+button.color-mode-2:hover{
+    background-color: #1976D2;
+}

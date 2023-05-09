@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="style.css" />
 
     <!-- main JS -->
-    <script defer src="main.js"></script>
 
     <title>Calculadora Idade Gestacional</title>
 </head>
 
-<body>
+<body class="color-mode-1">
     <div class="container">
+        <button id="color-mode"><img src="icons/bolotarosaazul.svg" alt=""></button>
         <div class="methodselect">
             <div id="choice">
                 <div class="title">CALCULADORA IDADE GESTACIONAL</div>
@@ -24,43 +24,44 @@
                 <div id="options">
                     <input type="radio" name="tipo" class="menstr" id="menstr" />
                     <label for="menstr" class="menstr" id="labelMenst">
-              Última Menstruação
-            </label>
+                        Última Menstruação
+                    </label>
                     <input type="radio" name="tipo" class="ultrasounds" id="ultrasounds" />
-                    <label for="ultrasounds" class='ultrasounds'> Ultrassom </label>
+                    <label for="ultrasounds" class="ultrasounds"> Ultrassom </label>
                 </div>
-
-                <!-- <select onchange="fun1()" name="methods" id="methods">
-            <option type="radio" value="menst">Última Menstruação</option>
-            <option type="radio" value="ultrasound">Ultrasom</option> -->
-                <!-- </select> -->
             </div>
         </div>
         <div class="divisor-1"></div>
         <form>
             <div class="fills">
                 <div class="menst" id="menst">
-                    <label for="lastPeriodDate">Informe a data da Última Menstruação:</label
-            >
-            <br />
-            <input type="date" id="dateMenst" required />
-          </div>
-          <div class="ultrasound" id="ultrasound">
-            <label for="lastUltSound">Informe a data do Ultrassom:</label>
+                    <label for="lastPeriodDate">Informe a data da Última Menstruação:</label>
+                    <br />
+                    <input type="date" id="dateMenst" required />
+                </div>
+                <div class="ultrasound" id="ultrasound">
+                    <label for="lastUltSound">Informe a data do Ultrassom:</label>
                     <br />
                     <input type="date" id="dateUltra" required />
                     <br />
                     <label for="ultSoundWeek">No ultrassom a gestação tinha</label><br />
-                    <input type="number" class="number" placeholder="0" value="0" min="0" max="50" name="weeks" id="weeks" required /> Semanas e
+                    <input type="number" class="number" placeholder="0" value="0" min="0" max="50" name="weeks"
+                        id="weeks" required />
+                    Semanas e
                     <br />
-                    <input type="number" class="number days" placeholder="0" value="0" min="0" max="6" name="days" id="days" required /> dias <br />
+                    <input type="number" class="number days" placeholder="0" value="0" min="0" max="6" name="days"
+                        id="days" required />
+                    dias <br />
                 </div>
             </div>
-            <div class="divisor-1"></div>
         </form>
-        <button type="submit" class="calcular" id="calcular">Calcular</button>
+        <div class="divisor-1"></div>
+        <button type="submit" class="calcular color-mode-1" id="calcular">
+            <span class="color-mode-1">Calcular</span>
+        </button>
         <div id="resultados"></div>
     </div>
+    <script defer src="main.js"></script>
 </body>
 
 </html>
