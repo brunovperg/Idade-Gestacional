@@ -50,6 +50,28 @@ function HidebothForm() {
     calc.style.visibility = "hidden";
 }
 
+
+// ########### BUTTON TO CHANGE BACKGROUND AND BUTTON COLORS ########
+const colorModeButton = document.querySelector('#color-mode');
+colorModeButton.addEventListener('click', () => {
+    // Obter o elemento body
+    const body = document.querySelector('body');
+    // Verificar qual esquema de cores está atualmente ativo
+    if (body.classList.contains('color-mode-1')) {
+        // Desativar esquema de cores 1 e ativar esquema de cores 2
+        body.classList.remove('color-mode-1');
+        body.classList.add('color-mode-2');
+        calc.classList.remove('color-mode-1');
+        calc.classList.add("color-mode-2");
+    } else if (body.classList.contains('color-mode-2')) {
+        // Desativar esquema de cores 2 e ativar esquema de cores 3
+        body.classList.remove('color-mode-2');
+        body.classList.add('color-mode-1');
+        calc.classList.remove("color-mode-2");
+        calc.classList.add("color-mode-1");
+    }
+})
+
 // ########### TAKE INPUT DATA INTO CALCULATION ##############
 const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
 

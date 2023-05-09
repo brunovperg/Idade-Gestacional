@@ -25,8 +25,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    background-color: #ffc0cb;
-    background: linear-gradient(to bottom, #ffc0cb, #ffffff);
+    background-color: linear-gradient(to bottom, #ffc0cb, #ffffff);
 }
 
 h1,
@@ -136,6 +135,54 @@ button.calcular span {
     font-size: 1.3rem;
 }
 
+button#color-mode{
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    outline: none;
+    background: none;
+    z-index: 999;
+    cursor: pointer;
+}
+button#color-mode img{
+display: block;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
 #resultados p {
     padding-top: 2rem;
+}
+
+
+/* Esquema de cores 1 */
+body.color-mode-1 {
+    background: linear-gradient(to bottom, #ffc0cb, #ffffff);
+}
+button.color-mode-1{
+    background-color: #db4e7d;
+    color: white;
+}
+button.color-mode-1:hover{
+    background-color: #e91e63;
+}
+
+/* Esquema de cores 2 */
+body.color-mode-2 {
+ background: linear-gradient(to bottom, #ADD8E6, #ffffff);
+}
+button.color-mode-2{
+    background-color: #4b8ccc;
+    color: white;
+}
+button.color-mode-2:hover{
+    background-color: #1976D2;
 }
