@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt_BR">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,55 +11,83 @@
     <!-- main JS -->
     <script defer src="main.js"></script>
 
-    <title>Calculadora Idade Gestacional</title>
-</head>
+    <title>Calculadora Idade Gestaciona</title>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="methodselect">
-            <div id="choice">
-                <div class="title">CALCULADORA IDADE GESTACIONAL</div>
-                <label for="methods">Selecione uma opção</label><br />
-                <div id="options">
-                    <input type="radio" name="tipo" class="menstr" id="menstr" />
-                    <label for="menstr" class="menstr" id="labelMenst">
+      <div class="methodselect">
+        <div id="choice">
+          <div class="title">CALCULADORA IDADE GESTACIONAL</div>
+          <label for="methods">Selecione uma opção</label><br />
+          <div id="options">
+            <input type="radio" name="tipo" class="menstr" id="menstr" />
+            <label for="menstr" class="menstr" id="labelMenst">
               Última Menstruação
             </label>
-                    <input type="radio" name="tipo" class="ultrasounds" id="ultrasounds" />
-                    <label for="ultrasounds" class='ultrasounds'> Ultrassom </label>
-                </div>
+            <input
+              type="radio"
+              name="tipo"
+              class="ultrasounds"
+              id="ultrasounds"
+            />
+            <label for="ultrasounds" class="ultrasounds"> Ultrassom </label>
+          </div>
 
-                <!-- <select onchange="fun1()" name="methods" id="methods">
+          <!-- <select onchange="fun1()" name="methods" id="methods">
             <option type="radio" value="menst">Última Menstruação</option>
             <option type="radio" value="ultrasound">Ultrasom</option> -->
-                <!-- </select> -->
-            </div>
+          <!-- </select> -->
         </div>
-        <div class="divisor-1"></div>
-        <form>
-            <div class="fills">
-                <div class="menst" id="menst">
-                    <label for="lastPeriodDate">Informe a data da Última Menstruação:</label
+      </div>
+      <div class="divisor-1"></div>
+      <form>
+        <div class="fills">
+          <div class="menst" id="menst">
+            <label for="lastPeriodDate"
+              >Informe a data da Última Menstruação:</label
             >
             <br />
             <input type="date" id="dateMenst" required />
           </div>
           <div class="ultrasound" id="ultrasound">
             <label for="lastUltSound">Informe a data do Ultrassom:</label>
-                    <br />
-                    <input type="date" id="dateUltra" required />
-                    <br />
-                    <label for="ultSoundWeek">No ultrassom a gestação tinha</label><br />
-                    <input type="number" class="number" placeholder="0" value="0" min="0" max="50" name="weeks" id="weeks" required /> Semanas e
-                    <br />
-                    <input type="number" class="number days" placeholder="0" value="0" min="0" max="6" name="days" id="days" required /> dias <br />
-                </div>
-            </div>
-            <div class="divisor-1"></div>
-        </form>
-        <button type="submit" class="calcular" id="calcular">Calcular</button>
-        <div id="resultados"></div>
+            <br />
+            <input type="date" id="dateUltra" required />
+            <br />
+            <label for="ultSoundWeek">No ultrassom a gestação tinha</label
+            ><br />
+            <input
+              type="number"
+              class="number"
+              placeholder="0"
+              value="0"
+              min="0"
+              max="50"
+              name="weeks"
+              id="weeks"
+              required
+            />
+            Semanas e
+            <br />
+            <input
+              type="number"
+              class="number days"
+              placeholder="0"
+              value="0"
+              min="0"
+              max="6"
+              name="days"
+              id="days"
+              required
+            />
+            dias <br />
+          </div>
+        </div>
+        <div class="divisor-1"></div>
+      </form>
+      <button type="submit" class="calcular" id="calcular">Calcular</button>
+      <div id="resultados"></div>
     </div>
-</body>
-
+  </body>
 </html>
