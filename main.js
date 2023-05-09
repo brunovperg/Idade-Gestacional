@@ -3,41 +3,40 @@ const removeResults = () => {
     while (resultados.firstChild) {
         resultados.removeChild(resultados.lastChild);
     }
-}
+};
 
 // ########## HIDE AND SHOW FORMS FROM DROPDOWN WINDOW #########
 
 const menst = document.getElementById("menst");
 const ultra = document.getElementById("ultrasound");
 const calc = document.getElementById("calcular");
-const options = document.getElementById("options")
-const radio = document.querySelectorAll("input[type='radio']")
+const options = document.getElementById("options");
+const radio = document.querySelectorAll("input[type='radio']");
 
-HidebothForm()
+HidebothForm();
 
-radio.forEach(element => {
-    element.checked = false
-})
-let method = 0
+radio.forEach((element) => {
+    element.checked = false;
+});
+let method = 0;
 
 options.addEventListener("click", (evento) => {
-
     if (evento.target.classList == "menstr") {
-        method = 1
+        method = 1;
         ultra.style.visibility = "hidden";
         menst.style.visibility = "visible";
         calc.style.visibility = "visible";
-        removeResults()
+        removeResults();
     } else if (evento.target.classList == "ultrasounds") {
-        method = 2
+        method = 2;
         ultra.style.visibility = "visible";
         menst.style.visibility = "hidden";
         calc.style.visibility = "visible";
-        removeResults()
+        removeResults();
     } else {
         HidebothForm();
     }
-})
+});
 
 calc.addEventListener("click", () => {
     removeResults();
@@ -46,9 +45,9 @@ calc.addEventListener("click", () => {
 });
 
 function HidebothForm() {
-  menst.style.visibility = "hidden";
-  ultra.style.visibility = "hidden";
-  calc.style.visibility = "hidden";
+    menst.style.visibility = "hidden";
+    ultra.style.visibility = "hidden";
+    calc.style.visibility = "hidden";
 }
 
 // ########### TAKE INPUT DATA INTO CALCULATION ##############
@@ -69,36 +68,38 @@ function calculate() {
         const dateUltra = new Date(inputUltraDate).toUTCString();
         const utcInput = new Date(dateUltra).getTime();
         const weekAdd =
-            parseInt(document.getElementById("weeks").value) * (7 * 24 * 60 * 60 * 1000);
+            parseInt(document.getElementById("weeks").value) *
+            (7 * 24 * 60 * 60 * 1000);
         const dayAdd = document.getElementById("days").value * 24 * 60 * 60 * 1000;
         diffDays = Math.floor((todayAbs - utcInput + (weekAdd + dayAdd)) / oneDay);
     }
-    if (isNaN(diffDays) == true) {} else {
+    if (isNaN(diffDays) == true) {
+    } else {
         weeksAge = Math.floor(diffDays / 7);
         daysAge = diffDays % 7;
     }
 }
 
-    function createResults() {
-        const expectDays = new Date();
-        expectDays.setDate(expectDays.getDate() + (280 - diffDays));
-        const utcDays = expectDays.toUTCString().slice(4, 16);
+function createResults() {
+    const expectDays = new Date();
+    expectDays.setDate(expectDays.getDate() + (280 - diffDays));
+    const utcDays = expectDays.toUTCString().slice(4, 16);
 
-        const idadeGestacional = document.createElement("p");
-        idadeGestacional.classList.add("dpp");
+    const idadeGestacional = document.createElement("p");
+    idadeGestacional.classList.add("dpp");
 
-        const tituloIdade = document.createElement("strong");
-        tituloIdade.innerHTML = "Idade gestacional: ";
-        idadeGestacional.appendChild(tituloIdade);
+    const tituloIdade = document.createElement("strong");
+    tituloIdade.innerHTML = "Idade gestacional: ";
+    idadeGestacional.appendChild(tituloIdade);
 
-        idadeGestacional.innerHTML += `${weeksAge} semanas e ${daysAge} dias `;
-        resultados.appendChild(idadeGestacional);
+    idadeGestacional.innerHTML += `${weeksAge} semanas e ${daysAge} dias `;
+    resultados.appendChild(idadeGestacional);
 
-        const expectDate = document.createElement("p");
-        expectDate.classList.add("expDate");
-        const tituloExpDate = document.createElement("strong");
-        tituloExpDate.innerHTML = "Data provável do parto: ";
-        expectDate.appendChild(tituloExpDate);
-        expectDate.innerHTML += `${utcDays}`;
-        resultados.appendChild(expectDate);
-    }
+    const expectDate = document.createElement("p");
+    expectDate.classList.add("expDate");
+    const tituloExpDate = document.createElement("strong");
+    tituloExpDate.innerHTML = "Data provável do parto: ";
+    expectDate.appendChild(tituloExpDate);
+    expectDate.innerHTML += `${utcDays}`;
+    resultados.appendChild(expectDate);
+}

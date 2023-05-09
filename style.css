@@ -11,6 +11,8 @@
 
 form {
     visibility: hidden;
+    margin: 20px;
+    border: 1px solid #ffb3b3;
 }
 
 #menst {
@@ -23,7 +25,14 @@ body {
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    background: radial-gradient( circle, rgba(255, 255, 255, 1) 0%, rgba(147, 66, 255, 1) 100%);
+    background-color: #ffc0cb;
+    background: linear-gradient(to bottom, #ffc0cb, #ffffff);
+}
+
+h1,
+h2,
+h3 {
+    font-size: 2.5em;
 }
 
 .container {
@@ -73,14 +82,13 @@ body {
 .divisor-1 {
     margin-top: 1rem;
     visibility: visible;
-    height: 2px;
+    height: 1px;
     background: black;
 }
 
 label {
     font-size: 18px;
 }
-
 
 /* REMOVER SETAS DE NUMERO Chrome, Safari, Edge, Opera */
 
@@ -89,7 +97,6 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-
 
 /* Firefox */
 
@@ -103,15 +110,32 @@ input.number {
 
 button.calcular {
     visibility: hidden;
-    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 1rem;
     cursor: pointer;
+    background-color: #db4e7d;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 3px;
+    transition: all 0.3s ease;
+}
+
+button.calcular:hover {
+    background-color: #e91e63;
+    cursor: pointer;
+}
+
+button.calcular span {
+    color: #ffffff;
+    padding: 5px;
+    font-size: 1.3rem;
 }
 
 #resultados p {
     padding-top: 2rem;
 }
-
-
-/* const expectDate=new Date();
-expectDate.setDate(expectDate.getDate()+) */
