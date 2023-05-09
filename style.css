@@ -89,6 +89,15 @@ label {
     font-size: 18px;
 }
 
+/* INPUTS */
+input[type="date"],
+input[type="text"],
+input[type="number"] {
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  color: #000000;
+}
+
 /* REMOVER SETAS DE NUMERO Chrome, Safari, Edge, Opera */
 
 input::-webkit-outer-spin-button,
@@ -100,6 +109,8 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 
 input[type="number"] {
+    text-align: center;
+    max-width: 35px;
     -moz-appearance: textfield;
 }
 
